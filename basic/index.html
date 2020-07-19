@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* selector {
+      property: value;
+    } */
+
+    * {
+      color: green;
+    }
+
+    li {
+      color: blue;
+    }
+
+    li#special {
+      color: pink;
+    }
+
+    .red {
+      width: 100px;
+      height: 100px;
+      background: yellow;
+    }
+
+    button:hover {
+      color: red;
+      background: beige;
+    }
+
+    /* ver 1 
+    a[href] {
+      color: purple
+    } */
+
+    /* ver 2 1) [href="naver.com"] 2) a[href^="naver"] 3) */
+    a[href$=".com"] {
+      color: purple
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <ol>
+    <li id="special">First</li>
+    <li>Second</li>
+  </ol>
+  <button id="special">Button 1</button>
+  <button>Button 2</button>
+  <div class="red"></div>
+  <div class="blud"></div>
+  <a href="naver.com">Naver</a>
+  <a href="googlenaver.com">Google</a>
+  <a>Empty</a>                
+</body>
+</html>

@@ -1,0 +1,322 @@
+/* 전역 변수 지정 */
+:root {
+  /* color */
+  --white-color: #fff;
+  --black-color: #140a00;
+  --blue-color: #045fd4;
+  --red-color: #ff0102;
+  --grey-dark-color:#909090;
+  --grey-light-color: #e0e0e0;
+  --light-blue-color: #1679c5;
+  --toggle-blue-color: #1679c5;
+
+  /* 전반적인 size */
+  --spacing: 12px;
+  --spacing-small: 6px;
+  --avatar-size: 36px;
+  
+  /* font-size */
+  --font-large: 18px;
+  --font-regular: 16px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px; 
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+button, 
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: var(--white-color);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing);
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+header .logo {
+  font-size: var(--font-large);
+}
+
+header .logo i {
+  color: var(--red-color);
+}
+
+header .icons .fa-search {
+  margin-right: var(--spacing);
+}
+
+/* Video Player */
+/* 포지션 stick를 하면 어디에 sticky를 할건지 명시해 줘야함 (top: 0;)*/
+.player {
+  position: sticky;
+  top: 0;
+  text-align: center;
+  background-color: var(--black-color);
+}
+
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
+/* Video Info */
+.infoAndUpNext > .info {
+  padding: var(--spacing);
+  padding-bottom: 0px;
+}
+
+/* Metadata */
+.info .metadata .hashtags {
+  display: flex;
+  font-size: var(--font-small);
+  color: var(--blue-color);
+}
+
+/* class는 중복될 수 있기 때문에 .info */
+.info .metadata .hashtags li {
+  margin-right: var(--spacing);  
+}
+
+.info .metadata .titleAndButton {
+  display: flex;
+}
+
+.info .metadata .titleAndButton .title {
+  font-size: var(--font-medium);
+  margin-right: var(--spacing);  
+}
+
+/* clamp가 있을때 할당해 준다! */
+.info .metadata .titleAndButton .title.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
+  overflow: hidden;
+}
+
+.info .metadata .titleAndButton .moreBtn {
+  height: 100%;
+  transition: transform 300ms ease-in-out;
+}
+
+.info .metadata .titleAndButton .moreBtn.clicked {
+  transform: rotate(180deg);
+}
+
+.info .metadata .views {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+/* Actions buttons */
+.info .actions {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--spacing) 0;
+}
+
+.info .actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.info .actions button i {
+  margin: 0 auto;
+  margin-bottom: var(--spacing-small);
+  font-size: var(--font-regular);
+}
+
+.info .actions button i.active {
+  color: var(--blue-color);
+}
+
+/* Channel description */
+.info .channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey-light-color);
+  border-bottom: 1px solid var(--grey-light-color);
+}
+
+.info .channel .metadata {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-small) 0;
+}
+
+.info .channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info .channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  margin-right: var(--spacing);
+}
+
+.info .channel .metadata .info .name {
+  font-size: var(--font-medium);
+}
+
+.info .channel .metadata .info .subscribers {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.info .channel .subscribe {
+  text-transform: uppercase;
+  color: var(--red-color);
+  font-size: var(--font-medium);
+}
+
+/* Up next */
+.upNext {
+  padding: var(--spacing);
+}
+
+/* up next title */
+.upNext .info {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-medium);
+  color: var(--grey-dark-color);
+}
+
+.upNext .info .toggleBtn {
+  display: flex;
+}
+
+.upNext .info .autoplay {
+  margin-right: 5px;
+}
+
+/* UpNext title toggle button */
+.autoplayBtn input {
+  display: none;
+}
+
+.autoplayBtn input:checked + label {
+  background: var(--light-blue-color);
+}
+
+.autoplayBtn input:checked + label:before {
+  -moz-transform: translateX(1.2em);
+  -webkit-transform: translateX(1.2em);
+  transform: translateX(1.2em);
+}
+
+.autoplayBtn label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-tap-highlight-color: transparent;
+  width: 2.4em;
+  height: 1.2em;
+  padding: .2em;
+  background: #bcb8b8;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 1em;
+  -webkit-transition: background .1s ease;
+  transition: background .1s ease;
+}
+
+.autoplayBtn label:before {
+  content: '';
+  display: block;
+  width: 1.2em;
+  height: 1.2em;
+  background: #e7e7e7;
+  /* background: var(--toggle-blue-color); */
+  box-shadow: 3px 5px 20px -3px rgba(0, 0, 0, 0.32);
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .1s ease;
+  transition: -webkit-transform .1s ease;
+  transition: transform .1s ease;
+  transition: transform .1s ease, -webkit-transform .1s ease;
+}
+
+/* next list */
+.upNext .item {
+  display: flex;
+  margin-top: var(--spacing);
+}
+
+.upNext .item .img {
+  flex: 35%;
+  margin-right: var(--spacing);
+}
+
+.upNext .item .img img {
+  width: 100%;
+}
+
+.upNext .item .itemInfo {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.upNext .item .itemInfo .title { 
+  margin-bottom: var(--spacing-small);
+}
+
+.upNext .item .itemInfo .owner {
+  display: flex;
+  flex-direction: row;
+}
+
+.upNext .item .moreBtn {
+  flex-basis: 5%;
+  height: 100%;  
+}
+
+.upNext .item .itemInfo .owner .name,
+.upNext .item .itemInfo .owner .star,
+.upNext .item .itemInfo .owner .views {
+  font-size: var(--font-micro);
+  color: var(--grey-dark-color)
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    flex-direction: row;
+  }
+
+  .upNext {
+    padding: var(--spacing);
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 50px; 
+      height: 50px; 
+      margin-bottom: 20px; 
+      background: red;
+    }
+
+    .container {
+      background: yellow;
+      left: 20px;
+      top: 20px;
+      /* 이렇게 속성을 줌으로서 포지션이 변화된다.  */
+      position: relative; 
+    }
+
+    .box {
+      background: Blue;
+    }
+
+    .box {
+      background: Blue;
+      left: 20px;
+      top: 20px;
+      /* 내가 담겨있는 상자에서 옮겨감  */
+      position: absolute;
+    }
+
+    .box {
+      background: Blue;
+      left: 20px;
+      top: 20px;
+      /* 상자 안에서 완전히 벗어나 윈도우 페이지로부터 시작함  */
+      position: fixed;
+    }
+
+    .box {
+      background: Blue;
+      left: 20px;
+      top: 20px;
+      position: sticky; 
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">1</div>
+  </div>
+</body>
+</html>
