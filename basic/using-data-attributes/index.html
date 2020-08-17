@@ -19,14 +19,22 @@
   </style>
 </head>
 <body>
+  <!-- <div data-index="1" data-display-name="dream"></div>
+  <div data-index="2" data-display-name="coding"></div>
+  <span data-index="1" data-display-name="dream">sdfsdf</span> -->
   <div data-index="1" data-display-name="dream"></div>
   <div data-index="2" data-display-name="coding"></div>
-  <span data-index="1" data-display-name="dream">sdfsdf</span>
+  <span data-index="1" data-display-name="dream">stsadsa</span>
   <script>
-    const dream = document.querySelector('div[data-display-name="dream"]');
-    console.log(dream.dataset);
-    console.log(dream.dataset.displayName);
-    console.log(dream.dataset.index);
+    const dream = document.querySelector('div[data-display-name="dream"]')
+    console.log(dream.dataset)
+    console.log(dream.dataset.displayName)
+    console.log(dream.dataset.index)
+    // 아래처럼 javascript 에서 유용히 사용할 수 있다. 
+    // const dream = document.querySelector('div[data-display-name="dream"]');
+    // console.log(dream.dataset); // <div data-index="1" data-display-name="dream"></div> => xx map 안에 키와 value로 들어가져 있음
+    // console.log(dream.dataset.displayName); // 빈값. sdfsdf
+    // console.log(dream.dataset.index); // 1 
   </script>
 </body>
 </html>
