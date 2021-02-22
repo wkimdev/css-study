@@ -1,71 +1,65 @@
-/* 전역 변수 지정 */
 :root {
-  /* color */
-  --white-color: #fff;
-  --black-color: #140a00;
-  --blue-color: #045fd4;
-  --red-color: #ff0102;
-  --grey-dark-color:#909090;
-  --grey-light-color: #e0e0e0;
-  --light-blue-color: #1679c5;
-  --toggle-blue-color: #1679c5;
-
-  /* 전반적인 size */
-  --spacing: 12px;
+  /* Color */
+  /* Size */
+  --spacing: 18px;
+  --spacing-big: 40px;
   --spacing-small: 6px;
-  --avatar-size: 36px;
-  
-  /* font-size */
-  --font-large: 18px;
-  --font-regular: 16px;
-  --font-medium: 14px;
+
+  /* Font Size */
+  --font-midium: 15px;
   --font-small: 12px;
-  --font-micro: 10px; 
+  --font-micro: 10px;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+ul {
+  list-style: none;
 }
 
-body {
-  font-family: 'Nanum Gothic', sans-serif;
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
 }
 
+/* Up next */
 header {
- display: flex; 
- justify-content: space-between;
- padding: var(--spacing);
- background-color: var(--black-color);
- color: var(--white-color);
+  margin-top: var(--spacing);
+  padding: 0 var(--spacing-big);
 }
 
-header .logo {
-  font-size: var(--font-large);
+.item {
+  display: flex;
 }
 
-header .logo i {
-  color: var(--red-color);
+.item .image {
+  flex-basis: 40%;
+  margin-right: 13px;
 }
 
-header .icons .fa-search {
-  margin-right: var(--spacing);
-}
-
-/* Video Player */
-.player {
-  position: sticky;
-  top: 0;
-  text-align: center;
-  background-color: var(--black-color);
-}
-
-.player video {
+.item .image img {
   width: 100%;
-  height: 100%;
-  max-width: 1000px;
 }
 
+.item .itemInfo {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+}
 
-/*  Video Up and Next */
+.item .share {
+  flex-basis: 5%;
+  height: 100%;
+}
+
+.item .itemInfo .description {
+  font-size: var(--font-midium);
+}
+
+.item .itemInfo .maker {
+  font-size: var(--font-micro);
+}
+
+.item .itemInfo .hits {
+  font-size: var(--font-micro);
+}
